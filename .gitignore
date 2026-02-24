@@ -1,0 +1,65 @@
+
+node_modules/
+
+# ========================
+# Build output
+# ========================
+dist/
+build/
+coverage/
+
+# ========================
+# TypeScript
+# ========================
+*.tsbuildinfo
+
+# ========================
+# Logs
+# ========================
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ========================
+# Environment variables
+# ========================
+.env
+.env.*
+!.env.example
+
+# ========================
+# OS files
+# ========================
+.DS_Store
+Thumbs.db
+
+# ========================
+# IDE / Editor
+# ========================
+.vscode/
+.idea/
+*.swp
+
+# ========================
+# Temporary files
+# ========================
+tmp/
+temp/
+
+# ========================
+# Fastify uploads (se usar)
+# ========================
+uploads/
+
+# ========================
+# Test outputs
+# ========================
+.nyc_output/
+
+# ========================
+# Dependency directories (monorepo cases)
+# ========================
+.pnpm-store/
