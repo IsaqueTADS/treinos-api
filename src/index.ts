@@ -66,12 +66,35 @@ await app.register(ScalarApiReference, {
   routePrefix: "/docs",
   configuration: {
     theme: "bluePlanet",
+    sources: [
+      {
+        title: "Treinos API",
+        slug: "treinos-api",
+        url: "/swagger.json",
+      },
+      {
+        title: "Auth API",
+        slug: "auth-api",
+        url: "/api/auth/open-api/generate-schema",
+      },
+    ],
   },
 });
 
 await app.register(fastifyCors, {
   origin: ["http://localhost:3333"],
   credentials: true
+});
+
+app.route({
+  method: "GET",
+  url: "/swagger.json",
+  schema: {
+    hide: true,
+  },
+  handler: async () => {
+    return app.swagger();
+  },
 });
 
 app.get(
