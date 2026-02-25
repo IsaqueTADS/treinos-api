@@ -4,7 +4,10 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "dev": "tsx --watch src/index.ts"
+    "dev": "tsx --watch src/index.ts",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:studio": "prisma studio"
   },
   "engines": {
     "node": "24.x"
@@ -21,12 +24,15 @@
     "eslint-plugin-simple-import-sort": "12.1.1",
     "globals": "^17.3.0",
     "prettier": "3.8.1",
+    "prisma": "7.4.0",
     "tsx": "4.21.0",
     "typescript": "5.9.3",
     "typescript-eslint": "^8.56.1"
   },
   "dependencies": {
     "@fastify/swagger": "9.7.0",
+    "@prisma/adapter-pg": "7.4.0",
+    "@prisma/client": "7.4.0",
     "@scalar/fastify-api-reference": "1.44.26",
     "dotenv": "17.3.1",
     "fastify": "5.7.4",

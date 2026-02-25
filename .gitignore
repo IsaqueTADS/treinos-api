@@ -63,3 +63,4 @@ uploads/
 # Dependency directories (monorepo cases)
 # ========================
 .pnpm-store/
+/src/generated/prisma
