@@ -117,6 +117,9 @@ app.get(
 
 app.route({
   method: ["GET", "POST"],
+  schema: {
+    hide: true
+  },
   url: "/api/auth/*",
   async handler(request, reply) {
     try {

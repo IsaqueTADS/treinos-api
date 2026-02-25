@@ -64,3 +64,5 @@ uploads/
 # ========================
 .pnpm-store/
 /src/generated/prisma
+
+@request/*
