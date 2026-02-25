@@ -39,7 +39,7 @@ Thumbs.db
 # ========================
 # IDE / Editor
 # ========================
-.vscode/
+# .vscode/
 .idea/
 *.swp
 
