@@ -39,7 +39,7 @@ export const WorkoutPlan: FastifyPluginAsyncZod = async (app) => {
         const createWorkoutPlan = new CreateWorkoutPlan();
 
         const result = await createWorkoutPlan.execute({
-          useId: session.user.id,
+          userId: session.user.id,
           name,
           workoutDays,
         });

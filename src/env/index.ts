@@ -10,7 +10,7 @@ const _env = envSchema.safeParse(process.env);
 
 if (!_env.success) {
   console.error("❌ Invalid environment variables:");
-  console.error(JSON.stringify(_env.error.format(), null, 2));
+  console.error(JSON.stringify(z.treeifyError(_env.error), null, 2));
   throw new Error(
     "Environment validation failed. Please check your .env file."
   );
