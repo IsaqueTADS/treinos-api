@@ -21,6 +21,24 @@ export const UpdateWorkoutSessionSchema = z.object({
   completedAt: z.iso.datetime(),
 });
 
+export const StatsQuerySchema = z.object({
+  from: z.iso.date(),
+  to: z.iso.date(),
+});
+
+export const StatsSchema = z.object({
+  workoutStreak: z.number(),
+  consistencyByDay: z.record(
+    z.iso.date(),
+    z.object({
+      workoutDayCompleted: z.boolean(),
+      workoutDayStarted: z.boolean(),
+    }),
+  ),
+  completedWorkoutsCount: z.number(),
+  conclusionRate: z.number(),
+  totalTimeInSeconds: z.number(),
+});
 
 export const HomeDataSchema = z.object({
   activeWorkoutPlanId: z.uuid(),

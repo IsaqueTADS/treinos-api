@@ -14,6 +14,7 @@ import {
 import { auth } from "./lib/auth.js";
 import { homeRoutes } from "./routes/home.js";
 import { WorkoutPlan } from "./routes/workout-plan.js";
+import { statsRoutes } from "./routes/stats.js";
 
 const envToLogger = {
   development: {
@@ -87,8 +88,9 @@ await app.register(fastifyCors, {
   credentials: true,
 });
 
-await app.register(homeRoutes, { prefix: "/home" });
+app.register(homeRoutes, { prefix: "/home" });
 app.register(WorkoutPlan, { prefix: "/workout-plans" });
+app.register(statsRoutes, { prefix: "/stats" });
 
 app.route({
   method: "GET",
