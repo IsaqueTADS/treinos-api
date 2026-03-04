@@ -9,8 +9,9 @@ import {
   validatorCompiler,
 } from "fastify-type-provider-zod";
 
-import { authRoute } from "./routes/auth.js";
+import { authRoutes } from "./routes/auth.js";
 import { homeRoutes } from "./routes/home.js";
+import { meRoutes } from "./routes/me.js";
 import { statsRoutes } from "./routes/stats.js";
 import { WorkoutPlan } from "./routes/workout-plan.js";
 
@@ -97,7 +98,8 @@ app.route({
   },
 });
 
+app.register(authRoutes, { prefix: "/" });
 app.register(homeRoutes, { prefix: "/home" });
+app.register(meRoutes, { prefix: "/me" });
 app.register(WorkoutPlan, { prefix: "/workout-plans" });
 app.register(statsRoutes, { prefix: "/stats" });
-app.register(authRoute, { prefix: "/" });

@@ -14,17 +14,20 @@ datasource db {
 }
 
 model User {
-  id            String        @id
-  workoutPlans  WorkoutPlan[]
-  name          String
-  email         String
-  emailVerified Boolean       @default(false)
-  image         String?
-  createdAt     DateTime      @default(now()) @db.Timestamptz()
-  updatedAt     DateTime      @updatedAt @db.Timestamptz()
-
-  sessions Session[]
-  accounts Account[]
+  id                  String        @id
+  workoutPlans        WorkoutPlan[]
+  name                String
+  email               String
+  emailVerified       Boolean       @default(false)
+  image               String?
+  createdAt           DateTime      @default(now()) @db.Timestamptz()
+  updatedAt           DateTime      @updatedAt @db.Timestamptz()
+  sessions            Session[]
+  accounts            Account[]
+  weightInGrams       Int?
+  heightInCentimeters Int?
+  age                 Int?
+  bodyFatPercentage   Int? // 100 representa 100% 
 
   @@unique([email])
   @@map("user")

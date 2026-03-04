@@ -2,7 +2,7 @@ import { FastifyPluginAsyncZod } from "fastify-type-provider-zod";
 
 import { auth } from "@/lib/auth.js";
 
-export const authRoute: FastifyPluginAsyncZod = async (app) => {
+export const authRoutes: FastifyPluginAsyncZod = async (app) => {
   app.route({
     method: ["GET", "POST"],
     schema: {
