@@ -12,6 +12,7 @@ import {
 } from "fastify-type-provider-zod";
 
 import { auth } from "./lib/auth.js";
+import { homeRoutes } from "./routes/home.js";
 import { WorkoutPlan } from "./routes/workout-plan.js";
 
 const envToLogger = {
@@ -86,6 +87,7 @@ await app.register(fastifyCors, {
   credentials: true,
 });
 
+await app.register(homeRoutes, { prefix: "/home" });
 app.register(WorkoutPlan, { prefix: "/workout-plans" });
 
 app.route({
