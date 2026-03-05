@@ -6,6 +6,7 @@ const envSchema = z.object({
   DATABASE_URL: z.string().min(5),
   GOOGLE_CLIENT_ID: z.string().min(5),
   GOOGLE_CLIENT_SECRET: z.string().min(5),
+  FRONTEND_URL: z.string().min(5),
 });
 
 const _env = envSchema.safeParse(process.env);

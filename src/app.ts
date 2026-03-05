@@ -9,6 +9,7 @@ import {
   validatorCompiler,
 } from "fastify-type-provider-zod";
 
+import { env } from "./env/index.js";
 import { aiRoutes } from "./routes/ai.js";
 import { authRoutes } from "./routes/auth.js";
 import { homeRoutes } from "./routes/home.js";
@@ -84,7 +85,7 @@ await app.register(ScalarApiReference, {
 });
 
 await app.register(fastifyCors, {
-  origin: ["http://localhost:3333"],
+  origin: [env.FRONTEND_URL],
   credentials: true,
 });
 
