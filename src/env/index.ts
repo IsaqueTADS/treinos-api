@@ -4,6 +4,8 @@ import z from "zod";
 
 const envSchema = z.object({
   DATABASE_URL: z.string().min(5),
+  GOOGLE_CLIENT_ID: z.string().min(5),
+  GOOGLE_CLIENT_SECRET: z.string().min(5),
 });
 
 const _env = envSchema.safeParse(process.env);
@@ -12,7 +14,7 @@ if (!_env.success) {
   console.error("❌ Invalid environment variables:");
   console.error(JSON.stringify(z.treeifyError(_env.error), null, 2));
   throw new Error(
-    "Environment validation failed. Please check your .env file."
+    "Environment validation failed. Please check your .env file.",
   );
 }
 
