@@ -16,6 +16,7 @@ export const homeRoutes: FastifyPluginAsyncZod = async (app) => {
     method: "GET",
     url: "/:date",
     schema: {
+      operationId: "getHomeData",
       tags: ["Home"],
       summary: "Get home page data",
       params: z.object({

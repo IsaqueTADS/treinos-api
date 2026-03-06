@@ -19,6 +19,7 @@ export const statsRoutes: FastifyPluginAsyncZod = async (app) => {
     method: "GET",
     url: "/",
     schema: {
+      operationId: "getStats",
       tags: ["Stats"],
       summary: "Get user workout stats",
       querystring: StatsQuerySchema,

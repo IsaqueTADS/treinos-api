@@ -79,6 +79,7 @@ export const aiRoutes: FastifyPluginAsyncZod = async (app) => {
     method: "POST",
     url: "/",
     schema: {
+      operationId: "chatWithAIPersonalTrainer",
       tags: ["AI"],
       summary: "Chat with AI personal trainer",
     },

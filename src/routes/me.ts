@@ -17,6 +17,7 @@ export const meRoutes: FastifyPluginAsyncZod = async (app) => {
     method: "GET",
     url: "/",
     schema: {
+      operationId: "getUserTrainData",
       tags: ["Me"],
       summary: "Get user train data",
       response: {
@@ -57,6 +58,7 @@ export const meRoutes: FastifyPluginAsyncZod = async (app) => {
     method: "PUT",
     url: "/",
     schema: {
+      operationId: "upsertUserTrainData",
       tags: ["Me"],
       summary: "Upsert user train data",
       body: UpsertUserTrainDataBodySchema,
