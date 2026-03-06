@@ -49,7 +49,7 @@ await app.register(fastifySwagger, {
     servers: [
       {
         description: "Localhost",
-        url: "http://localhost:3333/",
+        url: env.API_URL,
       },
     ],
     components: {
