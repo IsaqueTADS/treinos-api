@@ -1,3 +1,4 @@
+import { google } from "@ai-sdk/google";
 import { openai } from "@ai-sdk/openai";
 import {
   convertToModelMessages,
@@ -17,7 +18,6 @@ import { UpsertUserTrainData } from "@/use-cases/UpsertUserTrainData.js";
 
 import { WeekDay } from "../generated/prisma/enums.js";
 import { auth } from "../lib/auth.js";
-import { google } from "@ai-sdk/google";
 
 const SYSTEM_PROMPT = `Você é um personal trainer virtual especialista em montagem de planos de treino personalizados.
 
