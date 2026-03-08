@@ -17,6 +17,7 @@ import { UpsertUserTrainData } from "@/use-cases/UpsertUserTrainData.js";
 
 import { WeekDay } from "../generated/prisma/enums.js";
 import { auth } from "../lib/auth.js";
+import { google } from "@ai-sdk/google";
 
 const SYSTEM_PROMPT = `Você é um personal trainer virtual especialista em montagem de planos de treino personalizados.
 
@@ -96,7 +97,7 @@ export const aiRoutes: FastifyPluginAsyncZod = async (app) => {
       const { messages } = request.body as { messages: UIMessage[] };
 
       const result = streamText({
-        model: openai("gpt-4o-mini"),
+        model: google("gemini-2.5-flash"),
         system: SYSTEM_PROMPT,
         messages: await convertToModelMessages(messages),
         stopWhen: stepCountIs(5),

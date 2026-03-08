@@ -8,7 +8,8 @@ const envSchema = z.object({
   GOOGLE_CLIENT_SECRET: z.string().min(5),
   FRONTEND_URL: z.string().min(5),
   API_URL: z.string().min(5),
-  PORT: z.string().min(4)
+  PORT: z.string().min(4),
+  GOOGLE_GENERATIVE_AI_API_KEY: z.string().min(4),
 });
 
 const _env = envSchema.safeParse(process.env);
