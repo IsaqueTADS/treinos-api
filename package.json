@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsx --watch src/index.ts",
+    "build": "tsc && tsc-alias",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "db:studio": "prisma studio",
@@ -46,6 +47,7 @@
     "fastify": "5.7.4",
     "fastify-pino-pretty": "5.2.1",
     "fastify-type-provider-zod": "6.1.0",
+    "tsc-alias": "1.8.16",
     "zod": "4.3.6"
   }
 }

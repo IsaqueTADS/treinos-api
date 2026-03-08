@@ -7,14 +7,14 @@ import { env } from "@/env/index.js";
 import { prisma } from "./db.js";
 
 export const auth = betterAuth({
-  baseURL: process.env.BETTER_AUTH_URL,
+  baseURL: env.API_URL,
   trustedOrigins: [env.FRONTEND_URL],
   emailAndPassword: { enabled: true },
   socialProviders: {
     google: {
       prompt: "select_account",
-      clientId: env.GOOGLE_CLIENT_ID ,
-      clientSecret: env.GOOGLE_CLIENT_SECRET ,
+      clientId: env.GOOGLE_CLIENT_ID,
+      clientSecret: env.GOOGLE_CLIENT_SECRET,
     },
   },
   database: prismaAdapter(prisma, {

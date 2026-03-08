@@ -3,8 +3,8 @@ import { env } from "./env/index.js";
 
 try {
   await app.listen({ port: Number(env.PORT) }).then(() => {
-    console.log("🚀 HTTP server running on http://localhost:3333/");
-    console.log("📚 Docs available at http://localhost:3333/docs/");
+    console.log(`🚀 HTTP server running on ${env.API_URL}`);
+    console.log(`📚 Docs available at ${env.API_URL}/docs/`);
   });
 } catch (err) {
   app.log.error(err);

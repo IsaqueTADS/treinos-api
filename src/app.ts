@@ -32,7 +32,7 @@ const envToLogger = {
 };
 
 export const app = Fastify({
-  logger: envToLogger["development"] ?? true,
+  logger: envToLogger[env.NODE_ENV] ?? true,
 }).withTypeProvider<ZodTypeProvider>();
 
 app.setValidatorCompiler(validatorCompiler);
