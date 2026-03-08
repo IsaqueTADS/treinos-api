@@ -100,7 +100,7 @@ export const aiRoutes: FastifyPluginAsyncZod = async (app) => {
         model: google("gemini-2.5-flash"),
         system: SYSTEM_PROMPT,
         messages: await convertToModelMessages(messages),
-        stopWhen: stepCountIs(5),
+        stopWhen: stepCountIs(10),
         tools: {
           getUserTrainData: tool({
             description:
