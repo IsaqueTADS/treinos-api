@@ -5,10 +5,16 @@ import { auth } from "@/lib/auth.js";
 export const authRoutes: FastifyPluginAsyncZod = async (app) => {
   app.route({
     method: ["GET", "POST"],
+    url: "/api/auth/*",
+    config: {
+      rateLimit: {
+        max: 10,
+        timeWindow: "10 minute",
+      },
+    },
     schema: {
       hide: true,
     },
-    url: "/api/auth/*",
     async handler(request, reply) {
       try {
         // Construct request URL
