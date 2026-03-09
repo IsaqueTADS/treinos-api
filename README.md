@@ -12,6 +12,11 @@ Treinos API é uma aplicação backend que permite a criação e gerenciamento d
 - **Estatísticas e métricas** de desempenho e consistência
 - **Personal Trainer Virtual com IA** que cria planos de treino personalizados baseados nos dados do usuário
 
+> **📚 Origem do Projeto:** A Versão 1.0 deste projeto foi desenvolvida seguindo o bootcamp do **Felipe** da **Full Stack Club**, porem modificado. Deixo aqui meus sinceros agradecimentos pelo excelente projeto e pela oportunidade de aprendizado. Pretendo continuar evoluindo essa aplicação, implementando novas funcionalidades e melhorias.
+>
+> 🔗 **Full Stack Club:** [https://www.youtube.com/@dicasparadevs](https://www.youtube.com/@dicasparadevs)
+
+
 ### Para quem é esta API?
 
 Esta API foi desenvolvida para servir como backend de aplicações de fitness e treino, permitindo que usuários:
