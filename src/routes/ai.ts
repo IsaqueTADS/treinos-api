@@ -1,5 +1,4 @@
 import { google } from "@ai-sdk/google";
-import { openai } from "@ai-sdk/openai";
 import {
   convertToModelMessages,
   stepCountIs,
@@ -79,6 +78,12 @@ export const aiRoutes: FastifyPluginAsyncZod = async (app) => {
   app.route({
     method: "POST",
     url: "/",
+    config: {
+      rateLimit: {
+        max: 20,
+        timeWindow: "10 minute",
+      },
+    },
     schema: {
       operationId: "chatWithAIPersonalTrainer",
       tags: ["AI"],

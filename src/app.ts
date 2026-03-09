@@ -1,4 +1,5 @@
 import fastifyCors from "@fastify/cors";
+import rateLimit from "@fastify/rate-limit";
 import fastifySwagger from "@fastify/swagger";
 import ScalarApiReference from "@scalar/fastify-api-reference";
 import Fastify from "fastify";
@@ -37,6 +38,11 @@ export const app = Fastify({
 
 app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler);
+
+await app.register(rateLimit, {
+  max: 150,
+  timeWindow: "14 minute",
+});
 
 await app.register(fastifySwagger, {
   openapi: {
@@ -103,6 +109,6 @@ app.route({
 app.register(authRoutes, { prefix: "/" });
 app.register(homeRoutes, { prefix: "/home" });
 app.register(meRoutes, { prefix: "/me" });
-app.register(aiRoutes, { prefix: "/ai" });
+app.register(aiRoutes, { prefix: "/ai",  });
 app.register(WorkoutPlan, { prefix: "/workout-plans" });
 app.register(statsRoutes, { prefix: "/stats" });
