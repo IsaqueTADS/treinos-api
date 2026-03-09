@@ -12,6 +12,11 @@ Treinos API é uma aplicação backend que permite a criação e gerenciamento d
 - **Estatísticas e métricas** de desempenho e consistência
 - **Personal Trainer Virtual com IA** que cria planos de treino personalizados baseados nos dados do usuário
 
+> **📚 Origem do Projeto:** A Versão 1.0 deste projeto foi desenvolvida seguindo o bootcamp do **Felipe** da **Full Stack Club**, porem modificado. Deixo aqui meus sinceros agradecimentos pelo excelente projeto e pela oportunidade de aprendizado. Pretendo continuar evoluindo essa aplicação, implementando novas funcionalidades e melhorias.
+>
+> 🔗 **Full Stack Club:** [https://www.youtube.com/@dicasparadevs](https://www.youtube.com/@dicasparadevs)
+
+
 ### Para quem é esta API?
 
 Esta API foi desenvolvida para servir como backend de aplicações de fitness e treino, permitindo que usuários:
@@ -249,6 +254,20 @@ docker run -p 3333:3333 --env-file .env treinos-api
 ## 🌐 Rotas da API
 
 A API segue o padrão RESTful e está organizada nos seguintes módulos:
+
+### ⚠️ Rate Limiting
+
+Esta API possui proteção contra abuso através de rate limiting. Todas as requisições estão sujeitas a limites de requisições por período de tempo. O limite padrão é de **150 requisições a cada 14 minutos** por IP.
+
+Algumas rotas possuem limites específicos para proteger recursos críticos:
+
+| Rota | Limite | Período | Motivo |
+|------|--------|---------|--------|
+| `/api/auth/*` | 10 requisições | 10 minutos | Proteger contra brute force e abuso de autenticação |
+| `/ai` (POST) | 20 requisições | 10 minutos | Controlar uso da IA (custo computacional) |
+| Demais rotas | 150 requisições | 14 minutos | Limite padrão da API |
+
+Quando o limite é excedido, a API retorna um erro `429 Too Many Requests`. É importante respeitar esses limites para garantir a disponibilidade do serviço para todos os usuários.
 
 ### Autenticação (`/api/auth/*`)
 
