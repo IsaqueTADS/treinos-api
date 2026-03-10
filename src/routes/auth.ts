@@ -8,7 +8,7 @@ export const authRoutes: FastifyPluginAsyncZod = async (app) => {
     url: "/api/auth/*",
     config: {
       rateLimit: {
-        max: 10,
+        max: 80,
         timeWindow: "10 minute",
       },
     },
