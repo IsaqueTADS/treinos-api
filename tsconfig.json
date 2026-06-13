@@ -6,13 +6,18 @@
     "target": "es2024",
     "skipLibCheck": true,
     "strict": true,
+    "outDir": "./dist",
     "paths": {
       "@/*": [
         "./src/*"
       ]
     },
+    "types": [
+      "node"
+    ]
   },
   "include": [
-    "src"
+    "src",
+    "prisma.config.ts"
   ]
 }
