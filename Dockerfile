@@ -28,4 +28,4 @@ FROM base AS production
 RUN pnpm install --frozen-lockfile --prod --ignore-scripts
 COPY --from=build /app/dist ./dist
 
-CMD ["node", "dist/index.js"]
+CMD ["node", "dist/src/index.js"]
