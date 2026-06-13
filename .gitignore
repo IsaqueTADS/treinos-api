@@ -66,3 +66,4 @@ uploads/
 /src/generated/prisma
 
 @request/*
+doc/*
